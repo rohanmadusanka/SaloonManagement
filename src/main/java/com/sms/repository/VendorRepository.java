@@ -15,6 +15,10 @@ public class VendorRepository {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	public void setSessionFactory(SessionFactory sf) {
+		  this.sessionFactory = sf;
+		 }
 
 	public List<Vendor> getAllVendors() {
 		Session session = this.sessionFactory.getCurrentSession();
@@ -25,7 +29,6 @@ public class VendorRepository {
 	public void addVendor(Vendor vendor){
 		Session session = this.sessionFactory.getCurrentSession();
 		session.save(vendor);
-		session.getTransaction().commit();
 	}
 	
 	public Vendor getVendor(long id) {

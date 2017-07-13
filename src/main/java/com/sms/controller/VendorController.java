@@ -33,12 +33,13 @@ public class VendorController {
 	  return vendorService.getVendor(id);
 	 }
 	
-	@RequestMapping(value = "/addVender", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/addVendor", method = RequestMethod.POST, headers = "Accept=application/json")
 	 public void addVendor(@RequestBody Vendor vendor) {
+		System.out.println(vendor.getVendorName()+"<<<<<<<<<<<<<<<<<<<<<<<<");
 	  vendorService.addVendor(vendor);
 	 }
 	
-	@RequestMapping(value = "/updateVender", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/updateVendor", method = RequestMethod.POST, headers = "Accept=application/json")
 	 public void UpdateVendor(@RequestBody Vendor vendor) {
 	  vendorService.updateVendor(vendor);
 	 }
