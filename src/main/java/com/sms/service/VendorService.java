@@ -19,4 +19,19 @@ public class VendorService {
 	public List<Vendor> getAllVendors() {
 		return vendorRepository.getAllVendors();
 	}
+	
+	@Transactional
+	public Vendor getVendor(long id) {
+		return vendorRepository.getVendor(id);
+	}
+	
+	@Transactional
+	public void addVendor(Vendor vendor) {
+		vendorRepository.addVendor(vendor);
+	}
+	
+	@Transactional
+	public void updateVendor(Vendor vendor) {
+		vendorRepository.updateVendor(vendor);
+	}
 }
